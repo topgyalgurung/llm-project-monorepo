@@ -37,7 +37,7 @@ Build a RAG (Retrieval Augmented Generation) app with Langchain and OpenAI in Py
 ```bash
     python3 -m venv venv 
     source venv/bin/activate 
-    pip freeze --local > requirements.txt
+    pip freeze > requirements.txt
     pip install -r requirements.txt 
 ```
 - check requirements.txt file for required dependencies
