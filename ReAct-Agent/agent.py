@@ -70,7 +70,7 @@ class Agent:
                         messages=self.messages)
         return completion.choices[0].message.content
 
-
+# tools: calculate and average_dog_weight
 def calculate(what):
     return eval(what)
 
