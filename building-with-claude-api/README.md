@@ -1,8 +1,8 @@
 # Building with the Claude API
 
-Provider: Anthropic
-Lessons: 67 | Duration: 9 hr | Quizzes: 8
-Progress: 14 / 75 completed
+- Provider: Anthropic
+- Lessons: 67 | Duration: 9 hr | Quizzes: 8
+- Progress: 14 / 75 completed
 
 ## What I’ll Learn
 
@@ -31,25 +31,20 @@ Priority Topics
 7. MCP
 8. Caching & Production
 
-Final Project
+## Final Project
 
-Production RAG AI Agent
+- Production RAG AI Agent
+- Build a FastAPI + Claude application combining:
+  - User
+  - FastAPI
+  - Claude Agent
+    - RAG
+    - Tools
+    - MCP
+    - Structured Output
+  - Answer + Citations
 
-Build a FastAPI + Claude application combining:
-
-User
- ↓
-FastAPI
- ↓
-Claude Agent
- ├── RAG
- ├── Tools
- ├── MCP
- └── Structured Output
- ↓
-Answer + Citations
-
-Project Checklist
+## Project Checklist
 
 * Claude API
 * FastAPI
@@ -64,7 +59,7 @@ Project Checklist
 * Prompt caching
 * Testing & deployment
 
-Goal
+## Goal
 
 Turn the course concepts into one production-oriented AI project demonstrating:
 
