@@ -67,6 +67,11 @@ If you need to look up some information before asking a follow up question, you 
 model = ChatOpenAI(model="gpt-3.5-turbo")  #reduce inference cost
 abot = Agent(model, [tool], system=prompt)
 
-from IPython.display import Image
+# from IPython.display import Image
 
-Image(abot.graph.get_graph().draw_png())
+# Image(abot.graph.get_graph().draw_png())
+
+messages = [HumanMessage(content="What is the weather in sf?")]
+result = abot.graph.invoke({"messages": messages})
+result
+

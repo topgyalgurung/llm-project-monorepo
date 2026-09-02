@@ -1,12 +1,14 @@
+
+import openai
+from dotenv import load_dotenv
+import os
+import shutil 
+
 from langchain.document_loaders import DirectoryLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import Chroma
 from langchain.schema import Document
 from langchain_openai import OpenAIEmbeddings
-import openai
-from dotenv import load_dotenv
-import os
-import shutil 
  
 load_dotenv()
 

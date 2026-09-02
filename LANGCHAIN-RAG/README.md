@@ -45,7 +45,7 @@ Build a RAG (Retrieval Augmented Generation) app with Langchain and OpenAI in Py
 ## Create database 
 Create the Chroma DB
 ```bash
-python create_datbase.py
+python create_database.py
 ```
 
 ## Query the database 

@@ -1,0 +1,11 @@
+[
+  {
+    "task": "Create a Python function that parses an AWS S3 URI (s3://bucket-name/key-path) and returns the bucket name and key as separate values"
+  },
+  {
+    "task": "Write a JSON IAM policy document that grants permission to list all objects in an S3 bucket and read objects with a specific prefix"
+  },
+  {
+    "task": "Create a regex pattern that matches valid AWS EC2 security group IDs (format: sg-followed by 8 or 17 hexadecimal characters)"
+  }
+]
