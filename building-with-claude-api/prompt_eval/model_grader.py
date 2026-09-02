@@ -2,7 +2,9 @@
 from prompt_eval.generate_test_dataset import add_assistant_message
 from prompt_eval.generate_test_dataset import add_user_message
 from prompt_eval.generate_test_dataset import chat
-from prompt_eval.generate_test_dataset import generate_dataset
+
+from code_grader import grade_syntax
+
 from statistics import mean
 
 import json
@@ -57,14 +59,18 @@ test_case = {
 # Passes a test case into Claude
 def run_prompt(test_case):
     prompt = f"""
-Please solve the following task:
+    Please solve the following task:
 
-{test_case["task"]}
-"""
+    {test_case["task"]}
+
+    * Respond only with Python, JSON, or a plain Regex
+    * Do not add any comments or commentary or explanation
+    """
 
     messages = []
     add_user_message(messages, prompt)
-    output = chat(messages)
+    add_assistant_message(messages, "```code")
+    output = chat(messages, stop_sequences=["```"])
     return output
 
 # Function to execute a single test case and grade the output
@@ -73,8 +79,12 @@ def run_test_case(test_case):
     output = run_prompt(test_case)
 
     model_grade = grade_by_model(test_case, output)
-    score = model_grade["score"]
+    model_score = model_grade["score"]
     reasoning = model_grade["reasoning"]
+
+    syntax_score = grade_syntax(output, test_case)
+
+    score = (model_score + syntax_score) / 2
 
     return {
         "output": output,
@@ -97,21 +107,3 @@ def run_eval(dataset):
 
     return results
 
-
-def main():
-
-    if dataset_file.exists():
-        with dataset_file.open("r") as f:
-            dataset = json.load(f)
-    else:
-        dataset = generate_dataset()
-
-        with dataset_file.open("w") as f:
-            json.dump(dataset,f,indent=2)
-    results = run_eval(dataset)
-
-    print(json.dumps(results, indent=2))
-
-
-if __name__== "__main__":
-    sys.exit(main())

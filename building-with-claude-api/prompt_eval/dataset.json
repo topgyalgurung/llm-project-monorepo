@@ -1,11 +1,14 @@
 [
   {
-    "task": "Write a Python function that extracts the AWS region from an S3 bucket ARN (e.g., 'arn:aws:s3:::my-bucket'). The function should return the region or 'us-east-1' if not specified."
+    "task": "Write a Python function that extracts the AWS region from an S3 bucket ARN (e.g., 'arn:aws:s3:::my-bucket'). The function should return the region or 'us-east-1' if not specified.",
+    "format": "python"
   },
   {
-    "task": "Create a JSON object representing an AWS IAM policy that grants read-only access to a specific S3 bucket named 'company-data-bucket'."
+    "task": "Create a JSON object representing an AWS IAM policy that grants read-only access to a specific S3 bucket named 'company-data-bucket'.",
+    "format": "json"
   },
   {
-    "task": "Write a regex pattern that matches valid AWS access key IDs, which always start with 'AKIA' followed by 16 alphanumeric characters."
+    "task": "Write a regex pattern that matches valid AWS access key IDs, which always start with 'AKIA' followed by 16 alphanumeric characters.",
+    "format": "regex"
   }
 ]

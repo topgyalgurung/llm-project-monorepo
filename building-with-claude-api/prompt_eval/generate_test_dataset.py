@@ -41,6 +41,7 @@ def generate_dataset():
         [
         {
             "task": "Description of task",
+            "format": "json" or "python" or "regex"
         },
         ...additional
         ]
@@ -56,12 +57,3 @@ def generate_dataset():
     add_assistant_message(messages, "```json")
     text = chat(messages, stop_sequences=["```"])
     return json.loads(text)
-
-# test the dataset generation 
-
-dataset = generate_dataset()
-print(dataset)
-
-# saving the dataset
-with open('dataset.json', 'w') as f:
-    json.dump(dataset, f, indent=2)
